@@ -3,7 +3,6 @@ package com.itt.testapp
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.animation.library.ToolBarAnimation
 import com.itt.mylibrary.Utils
 
 class MainActivity : AppCompatActivity() {
