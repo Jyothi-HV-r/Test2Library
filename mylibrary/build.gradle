@@ -1,7 +1,14 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'jacoco'
+    id 'maven-publish'
+}
+repositories {
+    mavenCentral()
+}
+String VERSION_NAME = "2.2.2"
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
@@ -20,6 +27,20 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.itt'
+                artifactId = 'mylibrary'
+                version = VERSION_NAME
+            }
         }
     }
 }
