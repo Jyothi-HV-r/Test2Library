@@ -1,4 +1,5 @@
 package com.itt.mylibrary
 
-class Test {
+ open class Test {
+      var name="sdfg"
 }

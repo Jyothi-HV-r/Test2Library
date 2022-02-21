@@ -26,6 +26,13 @@ android {
         }
     }
 }
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+artifacts {
+    archives sourcesJar
+}
 afterEvaluate {
     publishing {
         publications {
@@ -35,6 +42,8 @@ afterEvaluate {
                 groupId = 'com.itt'
                 artifactId = 'mylibrary'
                 version = "2.2.3"
+                artifact(sourcesJar)
+
             }
         }
     }
