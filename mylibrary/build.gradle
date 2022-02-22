@@ -46,7 +46,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.itt'
                 artifactId = 'mylibrary'
-                version = "2.2.3"
+                version = "1.0"
                 artifact(sourcesJar)
 
             }
