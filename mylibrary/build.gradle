@@ -2,9 +2,14 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'maven-publish'
+
 repositories {
     mavenCentral()
+    google()
+    jcenter()
+    maven { url "https://jitpack.io" }
 }
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
@@ -41,7 +46,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.itt'
                 artifactId = 'mylibrary'
-                version = "2.2.3"
+                version = "1.0"
                 artifact(sourcesJar)
 
             }
